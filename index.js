@@ -12,7 +12,13 @@ function showRemainingTime() {
   
     let diferentaTimp = dataInViitor - timp;
   
-    
-  
-    document.getElementById("rezultat").innerHTML = rezultat;
+
+        const zile = Math.floor(diferentaTimp / (1000 * 60 * 60 * 24))
+        const ore = Math.floor((diferentaTimp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minute = Math.floor((diferentaTimp % (1000 * 60 * 60)) / (1000 * 60))
+        const secunde = Math.floor((diferentaTimp % (1000 * 60)) / 1000)
+
+        var rezultat = "Timp rămas până la data aleasă: " + zile + " zile, " + ore + " ore, " + minute + " minute, " + secunde + " secunde.";
+
+  document.getElementById("rezultat").innerHTML = rezultat;
   }
